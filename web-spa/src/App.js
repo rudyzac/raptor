@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import logo from './logo.svg';
+// import styled from 'styled-components';
 import './App.css';
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
 
   return (
     <div className="App">
-      <Home>
+      {/* <Home> */}
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
@@ -44,14 +45,14 @@ function App() {
             Learn React
           </a>
         </header>
-      </Home>
+      {/* </Home> */}
     </div>
   );
 }
 
-const Home = styled.div`
-  background-color: #FFDEE9;
-  background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
-`
+// const Home = styled.div`
+//   background-color: #FFDEE9;
+//   background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+// `
 
 export default App;

@@ -1,9 +1,21 @@
 version: "3.9"
 services:
+  postgres:
+    image: postgres:14.1
+    ports:
+      - '5432:5432'
+    env_file:
+      - ./postgres.env
+    volumes:
+      - postgres-data:/var/lib/postgresql/data/
   webapi:
     build: ./WebAPI/WebAPI
     ports:
-      - "5001:5001"   #5000:5000
+      - "5000:5000"   #5001:5001
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development  # Overrides Dockerfile setting
+    depends_on:
+      - postgres
   nginx:
     image: nginx:alpine
     volumes:
@@ -20,3 +32,5 @@ services:
     volumes:
        - ./web-spa:/app
        - '/app/node_modules'
+volumes:
+  postgres-data:

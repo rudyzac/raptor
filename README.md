@@ -1,4 +1,4 @@
-# 🦖 raptor
+# Raptor
 ```
                                                     -- __
                                                   ~ (@)  ~~~---_
@@ -25,7 +25,10 @@
                (_.-.'O'-'.
 ```
 
-# 16-12-2021
-Forked from super-duper-calendar. What I got:
-1. basic microservice architecture;
-2. webspa: webapi base url configured for dev env (localhost); scaffold for prod env.
+## Postgres dev db secrets
+Sensitive configuration information is not committed into source control, even when it's for the dev environment.
+
+The first time you run the app, before invoking `docker-compose up` create a `postgres.env` file in the root folder of the project.
+
+Inside it, copy and paste the contents of `dummy_postgres.env` and fill it in with your login details. 
+NB: values must be between quotes.

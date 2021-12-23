@@ -27,11 +27,9 @@ function App() {
   }, [])
 
   return (
-    <div className="App">
       <Home>
         <p>IT WORKZ!</p>
       </Home>
-    </div>
   );
 }
 

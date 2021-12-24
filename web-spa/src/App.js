@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import LoginPage from './pages/LoginPage';
 import './App.css';
 
 function App() {
@@ -26,16 +26,7 @@ function App() {
       )
   }, [])
 
-  return (
-      <Home>
-        <p>IT WORKZ!</p>
-      </Home>
-  );
+  return <LoginPage />
 }
-
-const Home = styled.div`
-  background-color: #FFDEE9;
-  background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
-`
 
 export default App;

@@ -24,9 +24,9 @@ builder.Services.AddCors(options =>
 // builder.Services.AddEndpointsApiExplorer();
 // builder.Services.AddSwaggerGen();
 
-// TODO: when production is set up, this will be if(dev environment)... else if(production env)....
-builder.Services.AddDbContext<WebAPI.DummyContext>(options =>
-                options.UseNpgsql(configuration.GetConnectionString("Postgres")));
+// TODO: when production is set up, this will be if(dev environment)... else if(production env).... RESTORE after 1st heroku version is up
+//builder.Services.AddDbContext<WebAPI.DummyContext>(options =>
+//                options.UseNpgsql(configuration.GetConnectionString("Postgres")));
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
@@ -36,9 +36,10 @@ using (var scope = app.Services.CreateScope())
 {
     var services = scope.ServiceProvider;
 
-    var context = services.GetRequiredService<DummyContext>();
-    context.Database.EnsureCreated();
-    DbInitializer.Initialize(context);
+    ///TODO: restore, just to push 1st, no db version, to Heroku
+    //var context = services.GetRequiredService<DummyContext>();
+    //context.Database.EnsureCreated();
+    //DbInitializer.Initialize(context);
 }
 
 // Configure the HTTP request pipeline.

@@ -1,0 +1,4 @@
+build:
+  docker:
+    webapi: WebAPI/WebAPI/Dockerfile
+    webspa: web-spa/Dockerfile

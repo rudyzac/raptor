@@ -7,24 +7,25 @@ function App() {
   const [weather, setWeather] = useState(null);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_DOMAIN}/weatherforecast`)
-      .then(res => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setWeather(result);
-          console.log("RISULTATO API", result)
-        },
-        // Note: it's important to handle errors here
-        // instead of a catch() block so that we don't swallow
-        // exceptions from actual bugs in components.
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      )
-  }, [])
+  // TODO: restore for local (until feat is developed), commented out bc wouldn't work on heroku
+  // useEffect(() => {
+  //   fetch(`${process.env.REACT_APP_API_DOMAIN}/weatherforecast`)
+  //     .then(res => res.json())
+  //     .then(
+  //       (result) => {
+  //         setIsLoaded(true);
+  //         setWeather(result);
+  //         console.log("RISULTATO API", result)
+  //       },
+  //       // Note: it's important to handle errors here
+  //       // instead of a catch() block so that we don't swallow
+  //       // exceptions from actual bugs in components.
+  //       (error) => {
+  //         setIsLoaded(true);
+  //         setError(error);
+  //       }
+  //     )
+  // }, [])
 
   return <LoginPage />
 }

@@ -1,3 +1,16 @@
+# Useful information
+
+## Folder structure
+
+- Molecules: basic components, they usually need further customization (e.g., children, etc). They're basically bricks to build full-fledged components.
+- Components: full-fledged components.
+- Pages: the application pages. 
+- Images: React components created off of SVG images. Use [this](https://react-svgr.com/playground/) to convert.
+
+## Tests
+- Files are kept close to the file of the component under test (namely, same directory).
+- Using Jest, Enzyme, jest-styled-components.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

@@ -8,9 +8,9 @@ namespace WebAPI.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        public SecureString Password { get; set; }
+        public string Password { get; set; }    //TODO: investigate SecureString
 
-        public Customer(string firstName, string lastName, string email, SecureString password) 
+        public Customer(string firstName, string lastName, string email, string password) 
         {
             this.Id = Guid.NewGuid();
             this.FirstName = firstName;

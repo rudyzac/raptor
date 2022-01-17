@@ -1,12 +1,12 @@
 using System.Security;
 
-namespace WebApi.Models
+namespace WebAPI.Models
 {
     public class Shop
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public string Address { get; set; } // TODO: implement Address type
+        public string Address { get; set; } // TODO: implement Address type (usare complex types)
         public string VATNumber { get; set; }
         public string Email { get; set; }
         public SecureString Password { get; set; }

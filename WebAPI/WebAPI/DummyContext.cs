@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-
+using WebAPI.Models;
 namespace WebAPI
 {
     public class DummyContext : DbContext
@@ -8,6 +8,7 @@ namespace WebAPI
         {
         }
 
-        public DbSet<Dummy> Dummies { get; set; }       
+        public DbSet<Dummy> Dummies { get; set; }
+        public DbSet<Customer> Customers { get; set; }
     }
 }

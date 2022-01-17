@@ -1,6 +1,6 @@
 using System.Security;
 
-namespace WebApi.Models
+namespace WebAPI.Models
 {
     public class Customer
     {

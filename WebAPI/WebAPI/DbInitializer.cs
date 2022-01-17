@@ -1,32 +1,28 @@
 using WebAPI;
+using WebAPI.Models;
 
 public static class DbInitializer
+{
+    public static void Initialize(DummyContext context)
     {
-        public static void Initialize(DummyContext context)
-        {
-            context.Database.EnsureCreated();
+        context.Database.EnsureCreated();
 
-            // Look for any dummies.
-            if (context.Dummies.Any())
-            {
-                return;   // DB has been seeded
-            }
-
-        var dummies = new Dummy[]
+        if (context.Customers.Any())
         {
-            new Dummy{Name="Carson"},
-            new Dummy{Name="Meredith"},
-            new Dummy{Name="Yan"},
-            new Dummy{Name="Peggy"},
-            new Dummy{Name="Laura"},
-            new Dummy{Name="Nino"},
-            new Dummy{Name="Carson"}
+            return;   // DB has been seeded
+        }
+
+        var customers = new Customer[]
+        {
+            new Customer{ Id=Guid.NewGuid(), FirstName="Piro", LastName="Bero", Email="mailpirobero", Password="pwdpirobero" },
+            new Customer{ Id=Guid.NewGuid(), FirstName="Lillo", LastName="Lallo", Email="lallalu", Password="zizipwd" }
         };
-                                                                      
-        foreach (Dummy s in dummies)
+
+        foreach (Customer c in customers)
         {
-            context.Dummies.Add(s);
+            context.Customers.Add(c);
         }
+
         context.SaveChanges();
-        }
     }
+}

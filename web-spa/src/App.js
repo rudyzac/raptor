@@ -1,6 +1,12 @@
+// TODO: this file is to remove. It's still here b/c of the code used in fetch. When you have successfully
+// managed to make API requests to other BE controllers, delete this.
+
 import React, { useState, useEffect } from 'react';
+import ReactDOM from "react-dom";
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import './App.css';
+import CustomerRegistration from './pages/CustomerRegistration';
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -26,7 +32,18 @@ function App() {
       )
   }, [])
 
-  return <LoginPage />
+  return (
+    <Routes>
+      <Route path="/customer-registration" element={<CustomerRegistration />} />
+      <Route path="/" element={<LoginPage />} />
+    </Routes>
+  )
 }
+
+ReactDOM.render(
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>, document.getElementById("root")
+);
 
 export default App;

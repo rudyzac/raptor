@@ -13,9 +13,8 @@ ReactDOM.render(
         <Route path="/customer-registration" element={<CustomerRegistration />} />
         <Route path="/" element={<LoginPage />} />
       </Routes>
-    </BrowserRouter>,
-  </React.StrictMode>,
-  document.getElementById('root')
+    </BrowserRouter>
+  </React.StrictMode>, document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function

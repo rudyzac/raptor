@@ -10,13 +10,13 @@ namespace WebAPI.Models
         public string Email { get; set; }
         public string Password { get; set; }    //TODO: investigate SecureString
 
-        // public Customer(string firstName, string lastName, string email, string password) 
-        // {
-        //     this.Id = Guid.NewGuid();
-        //     this.FirstName = firstName;
-        //     this.LastName = lastName;
-        //     this.Email = email;
-        //     this.Password = password;
-        // }
+        public Customer(string firstName, string lastName, string email, string password) 
+        {
+            this.Id = Guid.NewGuid();
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = email;
+            this.Password = password;
+        }
     }
 }
